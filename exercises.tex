@@ -1,0 +1,80 @@
+% Notes and exercises from Finite Dimensional Multilinear Algebra by Marcus
+% By John Peloquin
+\documentclass[letterpaper,12pt]{article}
+\usepackage{amsmath,amssymb,amsthm,enumitem,fourier,diagrams}
+\usepackage[hidelinks]{hyperref}
+
+\DeclareMathOperator{\im}{Im}
+
+\newcommand{\tprod}{\otimes}
+\newcommand{\bigtprod}{\bigotimes}
+\newcommand{\medtprod}{{\textstyle\bigtprod}}
+
+\newcommand{\dual}[1]{#1^*}
+\newcommand{\proj}[1]{\overline{#1}}
+\newcommand{\multi}[4]{#2_{#3}#1\cdots#1#2_{#4}}
+\newcommand{\timess}[3]{\multi{\times}{#1}{#2}{#3}}
+\newcommand{\tprods}[3]{\multi{\tprod}{#1}{#2}{#3}}
+
+% Theorems
+\theoremstyle{definition}
+\newtheorem*{exer}{Exercise}
+
+\theoremstyle{remark}
+\newtheorem*{rmk}{Remark}
+
+% Meta
+\title{Notes and exercises from\\\textit{Finite Dimensional Multilinear Algebra}}
+\author{John Peloquin}
+\date{}
+
+\begin{document}
+\maketitle
+
+% Intro
+\section*{Introduction}
+This document contains notes and exercises from \cite{marcus1} and~\cite{marcus2}.
+
+\bigskip
+\noindent
+{\boldmath\textbf{Unless otherwise stated, \(R\)~denotes a field of characteristic~\(0\) over which all vector spaces are defined.}}
+
+% Part I
+\newpage
+\part*{Part~I}
+\section*{Chapter~1}
+\subsection*{\S~3}
+\begin{exer}[9,10]
+Let \(\varphi\in M(V_1,\ldots,V_m:U)\) in this commutative diagram:
+\begin{diagram}[nohug]
+\timess{V}{1}{m}&\rTo^{\tprod}	&\tprods{V}{1}{m}\\
+				&\rdTo<{\varphi}&\dTo>f\\
+				&				&U
+\end{diagram}
+Let \(K=\ker f\). Then \(\im\varphi=U\) if and only if \(f\)~is surjective and every element in \((\tprods{V}{1}{m})/K\) has a decomposable representative.
+\end{exer}
+\begin{proof}
+If \(\im\varphi=U\), then \(f\)~is surjective and there is an induced isomorphism \(\proj{f}:(\tprods{V}{1}{m})/K\to U\). Also for any \(\proj{z}\in(\tprods{V}{1}{m})/K\) there are \(v_i\in V_i\) with
+\[\proj{f}(\proj{\tprods{v}{1}{m}})=f(\tprods{v}{1}{m})=\varphi(v_1,\ldots,v_m)=f(z)=\proj{f}(\proj{z})\]
+Since \(\proj{f}\)~is injective, it follows that \(\proj{\tprods{v}{1}{m}}=\proj{z}\).
+
+For the converse, if \(u\in U\) there are \(v_i\in V_i\) with \(\proj{\tprods{v}{1}{m}}=\proj{f}^{-1}(u)\), so
+\[u=\proj{f}(\proj{\tprods{v}{1}{m}})=f(\tprods{v}{1}{m})=\varphi(v_1,\ldots,v_m)\]
+Therefore \(\im\varphi=U\).
+\end{proof}
+
+\begin{rmk}
+For Exercise~11, it is simpler to prove that \(\dual{(\tprods{V}{1}{m})}\) is a tensor product of \(\dual{V_1},\ldots,\dual{V_m}\), then use Theorem~2.4.
+\end{rmk}
+
+\begin{rmk}
+For Exercise~12, it is simpler to observe that the linear map induced by~\(\nu\) through a tensor product is surjective between spaces of the same finite dimension and hence an isomorphism, then use Exercise~3.
+\end{rmk}
+
+% References
+\newpage
+\begin{thebibliography}{0}
+\bibitem{marcus1} Marcus, M. \textit{Finite Dimensional Multilinear Algebra~I}. 1973.
+\bibitem{marcus2} Marcus, M. \textit{Finite Dimensional Multilinear Algebra~II}. 1975.
+\end{thebibliography}
+\end{document}
