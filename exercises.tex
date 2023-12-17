@@ -4,17 +4,25 @@
 \usepackage{amsmath,amssymb,amsthm,enumitem,fourier,diagrams}
 \usepackage[hidelinks]{hyperref}
 
+\newcommand{\R}{\mathbb{R}}
+
 \DeclareMathOperator{\im}{Im}
 
 \newcommand{\tprod}{\otimes}
 \newcommand{\bigtprod}{\bigotimes}
 \newcommand{\medtprod}{{\textstyle\bigtprod}}
+\newcommand{\eprod}{\wedge}
+\newcommand{\bigeprod}{\bigwedge}
+\newcommand{\medeprod}{{\textstyle\bigeprod}}
 
+\newcommand{\delete}{\widehat}
 \newcommand{\dual}[1]{#1^*}
 \newcommand{\proj}[1]{\overline{#1}}
+\newcommand{\sprod}[2]{\langle#1,#2\rangle}
 \newcommand{\multi}[4]{#2_{#3}#1\cdots#1#2_{#4}}
 \newcommand{\timess}[3]{\multi{\times}{#1}{#2}{#3}}
 \newcommand{\tprods}[3]{\multi{\tprod}{#1}{#2}{#3}}
+\newcommand{\eprods}[3]{\multi{\eprod}{#1}{#2}{#3}}
 
 % Theorems
 \theoremstyle{definition}
@@ -110,6 +118,19 @@ It follows from Theorem~1.7, together with Theorem~3.4 in Section~2.3, that if \
 It follows from Theorem~2.7 that a linear transformation of \(\medtprod_1^m V\) is bisymmetric as a transformation if and only if it is (completely) symmetric as a tensor, when we take
 \[L(\medtprod_1^m V,\medtprod_1^m V)=\medtprod_1^m L(V,V)\]
 as in the remark from Chapter~2, \S~1 above.
+\end{rmk}
+
+\begin{rmk}
+In Exercise~25, if \(\varphi(x,y)=\sprod{x}{y}\) is an inner product on~\(V\) over~\(\R\), then the induced derivation \(\delta_x:\medeprod V\to\medeprod V\) given by
+\[\delta_x(\eprods{x}{1}{m})=\sum_{k=1}^m(-1)^{k-1}\sprod{x}{x_k}x_1\eprod\cdots\eprod\delete{x_k}\eprod\cdots\eprod x_m\]
+is adjoint to the multiplication operator \(M_x:\medeprod V\to\medeprod V\) in Exercise~24 given by
+\[M_x(\eprods{x}{1}{m})=x\eprod\eprods{x}{1}{m}\]
+under the induced inner product in~\(\medeprod V\).
+\end{rmk}
+
+\begin{rmk}
+In Exercise~33, if \(H=S_m\) then
+\[D(T_1,\ldots,T_m)=m!\,\Omega(T_1,\ldots,T_m)\]
 \end{rmk}
 
 % References
