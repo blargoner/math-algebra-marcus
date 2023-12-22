@@ -81,9 +81,31 @@ In Exercise~12, it is simpler to observe that the linear map induced by~\(\nu\) 
 
 \subsection*{\S~4}
 \begin{rmk}
-In the extension of a scalar field, it is simpler to observe that the scalar product is the bilinear map corresponding to the composite linear map
+In the extension of the scalar field of~\(V\) from \(R\) to~\(F\), it is simpler to observe that the scalar product of~\(F\) on \(F\tprod V\) is the bilinear map corresponding to the composite linear map
 \[F\tprod(F\tprod V)\to(F\tprod F)\tprod V\to F\tprod V\]
 using Exercise~4 in Section~1.3, where \(F\tprod F\to F\) is from multiplication in~\(F\).
+\end{rmk}
+
+\begin{rmk}
+If \(\sigma:R\to R\) is an involutory automorphism and \(V\)~is a vector space over~\(R\), then the \emph{\(\sigma\)-conjugate vector space}~\(V^{\sigma}\) has the same underlying additive group as~\(V\), but has scalar multiplication defined by
+\[\alpha v=\sigma(\alpha)v\qquad(\alpha\in R,v\in V)\]
+where the product on the left is in~\(V^{\sigma}\) and the product on the right is in~\(V\). Clearly \((V^{\sigma})^{\sigma}=V\).
+
+If \(\varphi:U\times V\to R\) is a sesquilinear function, then the corresponding function \(\varphi^{\sigma}:U\times V^{\sigma}\to R\) defined by \(\varphi^{\sigma}(u,v)=\varphi(u,v)\) satisfies
+\begin{align*}
+\varphi^{\sigma}(u,\alpha v_1+\beta v_2)&=\varphi(u,\sigma(\alpha)v_1+\sigma(\beta)v_2)\\
+	&=\alpha\,\varphi(u,v_1)+\beta\,\varphi(u,v_2)\\
+	&=\alpha\,\varphi^{\sigma}(u,v_1)+\beta\,\varphi^{\sigma}(u,v_2)
+\end{align*}
+so \(\varphi^{\sigma}\)~is \emph{bilinear}, and the converse also holds.
+
+If \(\tprod:V_1\times V_2\to V_1\tprod V_2\) is a tensor product, then \(\tprod^{\sigma}:V_1^{\sigma}\times V_2^{\sigma}\to(V_1\tprod V_2)^{\sigma}\) defined by \(v_1\tprod^{\sigma}v_2=v_1\tprod v_2\) is also a tensor product, which means
+\[(V_1\tprod V_2)^{\sigma}=V_1^{\sigma}\tprod V_2^{\sigma}\]
+Now if \(\varphi_i:U_i\times V_i\to R\) are sesquilinear for \(i=1,\ldots,m\), then we can define
+\[\psi^{\sigma}(u_1,\ldots,u_m;v_1,\ldots,v_m)=\prod_{i=1}^m\varphi_i^{\sigma}(u_i,v_i)\]
+which is \emph{multilinear} and hence induces a bilinear \(\varphi^{\sigma}:(\medtprod_1^m U_i)\times(\medtprod_1^m V_i)^{\sigma}\to R\) and corresponding sesquilinear \(\varphi:(\medtprod_1^m U_i)\times(\medtprod_1^m V_i)\to R\) with
+\[\varphi(\tprods{u}{1}{m},\tprods{v}{1}{m})=\prod_{i=1}^m\varphi_i(u_i,v_i)\]
+as in Theorem~4.4. This approach avoids the use of a basis in defining~\(\varphi\).
 \end{rmk}
 
 \newpage
